@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            
+            *{
+                padding: 0%;
+                margin: 0%;
+            }
+            .box
+            {
+                border: 5px solid rebeccapurple;
+                background-color: lightgray;
+                padding: 40px;
+                margin: 40px;
+                 width: 300px;
+                 height: 150px;
+            }
+            .container
+            {
+                width: 50%;
+                border: 1px solid red;
+            }
+            div>*{
+                padding: 5px;
+                border: 1px solid green ;
+            }
+            .flex
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+            .center
+            {
+                justify-content: center;
+                align-items: center;
+            }
+            .text-right
+            {
+                text-align: right;
+            }
+            .num
+            {
+                font-size: 45vh;
+                font-weight: bold;
+                background-color: indigo;
+            }
+            .btn
+            {
+                flex-grow: 1;
+                
+            }
+            
+
+        </style>
+    </head>
+    <body> 
+        <div class="container">
+                  <div class=" score text-right">
+                             Score:0
+                  </div>
+                <div class="box num flex">
+                                  100
+                 </div>
+                 <div class="action flex">
+                             <div class="btn flex" onclick="clicked(`even`)">
+                                 Even
+
+                             </div>
+                             <div class="btn flex" onclick="clicked(`odd`)">
+                                
+                                 Odd
+                             </div>
+                </div>
+        </div>
+        <script>
+            let score=0;
+            let scoreBox=document.querySelector(".score")
+            let numBox=document.querySelector(".num")
+
+           /* let numBox= document.querySelector(".num").innerHTML.trim*/
+
+                function clicked(btn_type)
+                {
+                    let num=numBox.innerHTML.trim()
+                    let ans=(num%2==0)?"even":"odd";
+                    (ans===btn_type)? updatescore(1):updatescore(-1);
+                    updateNumber();
+                }
+
+
+
+                function updatescore(amount)
+                {
+                        score+=amount;
+                        scoreBox.innerHTML=`Score:${score}`;
+                }
+
+
+
+                function updateNumber()
+                {
+                    var x=Math.floor((Math.random() *100)+1);
+                    document.querySelector(".num").innerHTML=x;
+                }
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
