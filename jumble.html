@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+
+
+        }
+        .round{
+            width: 60px;
+            height:60px;
+            border-radius:50%;
+            border: 1px solid black;
+        }
+        .round{
+            font-size: 50px;
+            text-align: center;
+        }
+        .flex{
+            justify-content:center;
+            display: flex;
+            align-items: center;
+
+        }
+        .text{
+            text-align: center;
+            
+        }
+        .w-100{
+            width: 100%;
+        }
+        .ip{
+            width: 200px;
+            height: 30px;
+
+        }
+       
+
+        </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="text"><h1>Guess the word</h1>
+        </div>
+        <div class="word-box flex">
+            
+
+        </div>
+        <div class="w-100 flex"><input type="text" class="ip" id=""></div>
+    <div class="btn-box flex">
+        <div class="btn"><button>Submit</button>
+        </div>
+    </div>
+    </div>
+    <script>
+        window.onload=function(){
+            let wordBox=document.querySelector(".word-box");
+            let originalword="hello";
+            let s="hello",jumbled="",seen="";
+
+        function getRandomIndex(s){
+            return Math.floor(Math.random()*10)%s.length;
+        }
+
+
+        function jumbleword(s){
+        let jumbled="", seen="";
+
+        while(s.length!=jumbled.length){
+            let i=getRandomIndex(s);
+            if(seen.indexOf(i)==-1){
+                seen+=i;
+                jumbled+=s[i];
+            }
+        }
+        return jumbled; 
+
+        }
+
+    function showword(s){
+        let circleHTML="";
+        for(let i=0;i<s.length;i++)
+        {
+            circleHTML+=`<div class="round flex">${s[i]}</div>`
+        }
+        wordBox.innerHTML=circleHTML;
+    }
+
+    let jumbledword=jumbleword(originalword);
+    showword(jumbledword);
+ }
+    
+        </script>
+</body>
+</html>
