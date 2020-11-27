@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+            <style>
+               *{
+                  margin: 0;
+                  padding: 0;  
+                }
+                header
+                {
+                    min-height: 50px;
+                }
+                .img
+                {
+                    max-width: 100%;
+                }
+                .text-white
+                {
+                    color: white;
+                }
+
+                .flip-blue  
+                {
+                    background-color:#2874f0;
+                }
+                .text-yellow
+                {
+                    color: yellow;
+                }
+                .col-30
+                {
+                    width: 30%;
+                }
+                .col-20
+                {
+                    width: 20%;
+                }
+                .col-80
+                {
+                    width: 80%;
+                }
+                .col-90
+                {
+                    width: 90%;
+                }
+                .col-40
+                {
+                    width: 35%;
+                }
+                .col-10
+                {
+                    width: 10%;
+                }
+                .col-200
+                {
+                    width: 200%;
+                }
+                .col-50
+                {
+                    width: 50%;
+                }
+                .font-12
+                {
+                    font-size: 12px;
+                }
+                .logo-container
+                {
+                    padding: 10px 0;
+
+                }
+                .right-align
+                {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+                .inline-block
+                {
+                    display: inline-block;
+                }
+                .more:hover
+                { 
+                    background-color: yellow;
+                    
+                }
+                .box
+                {
+                    width: 50px;
+                    height: 50px;
+                }
+                .options
+                {
+                    transform: scale(1,0);
+                    transition: all 2s ease-in-out;
+                }
+               .list-box
+                {
+                    position: absolute;
+                    top: 10px;
+                    border: solid blue;
+                    background-color: white;
+                }
+                .list-item-block
+                {
+                    padding: 15px;
+                    border-bottom: 1px solid blue;
+                }
+
+                 h4 
+                {
+                        padding: 10px;
+                }
+                
+                .dropdown
+                  {
+                       position: relative;
+                       cursor: pointer;
+                  }
+                .dropdown:hover>.back-box
+                {
+                    
+                        background-color: white;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        transform-origin: center;
+                        transform: rotate(45deg);
+                        z-index: -5;
+                        left: 35%;
+                        border: solid blue;
+                }
+                .dropdown:hover > .options
+                {
+                    transform: scale(1,1);
+                }
+
+
+
+
+
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="flip-blue">
+                <div class="logo-container col-30 inline-block">
+                    <div class="logo-box col-20 right-align">
+                        <div class="main-logo-box  ">
+                            <img src="assets/flip.png" class="img" alt="flipkart">
+                        </div>
+                        <div class="explore">
+                            <a href="home.html" class="text-white font-12 col-90">Explore <span class="text-yellow">Plus</span></a>
+                            <img src="assets/plus.png" class="img col-10" alt="Plus">
+                         </div>
+                    </div>
+
+                </div>
+
+                <div class="search-container inline-block col-30 ">
+                    <input type="text"  placeholder="products brands and more">
+                </div>
+
+                <div class="navigation-login inline-block col-40">
+                    <div class="dropdown">
+                            <h4>Login</h4>
+                            <div class="options">
+                                <ul class="list-box">
+                                    <li class="list-item-block">
+                                        My profile
+                                    </li>
+                                    <li class="list-item-block">
+                                        flipkart plus Zone
+                                    </li >
+                                    <li class="list-item-block">
+                                        Orders
+                                    </li>
+                                    <li class="list-item-block">
+                                        WishLIst
+                                    </li>
+                                    <li class="list-item-block">
+                                        Rewards
+                                    </li>
+                                    <li class="list-item-block">
+                                        Gift cards
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="back-box options">
+                            </div>
+                    </div>
+                </div>
+                    <div class="cart inline-block col-20">
+                                            <div class="dropdown inline-block">
+                                                        <h4>More</h4>
+                                                <div class="options">
+                                                    <ul class="list-box">
+                                                        <li class="list-item-block">
+                                                            <div>
+                                                                    <img src="" alt="">
+                                                            </div>
+                                                            <div>
+                                                                    Notification Preferences
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-item-block">
+                                                            flipkart Plus Zone 
+                                                        </li>
+                                                        <li class="list-item-block">
+                                                            Orders
+                                                        </li>
+                                                        <li class="list-item-block">
+                                                            WishLIst 
+                                                        </li>
+                                                        <li class="list-item-block">
+                                                            Rewards
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="back-box options">
+                                                </div>
+                                            </div>
+                                        <div class="inline-block col-20">
+                                                <img src="assets/shopping-cart.svg" class="img">
+                                         </div>
+                                    <div class="inline-block">
+                                            cart
+                                    </div>
+                   </div>
+                </div>
+            </header>
+
+        </div>
+    </body>
+</html>
