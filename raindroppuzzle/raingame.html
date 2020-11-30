@@ -9,15 +9,14 @@
             }
             .drop
             {
-                width: 150px;
-                height: 150px;
+                width: 75px;
+                height: 75px;
                 background-color: #d4f1f9;
                 transform: rotate(-45deg);
                 border-radius: 50%;
                 border-top-right-radius: 0%;
                 position: absolute;
-                top: 60px;
-                left: 200px;
+            
             }
             .container
             {
@@ -48,38 +47,94 @@
                 max-width: 100%;
                 width: 100%;
             }
+            .text
+            {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transform: rotate(45deg);
+
+            }
+            .blue
+            {
+                background-color:#d4f1f9;
+            }
 
         </style>
     </head>
     <body>
-        <main class="flex center">
-        <div class="container bg-black">
+    <main class="flex center">
+        <div class="container blue">
+
              <div class="cloud">
-                 <img src="cloud.jpg" class="img" alt="">
+                 <img src="sky2.jpg" class="img" alt="">
+             </div>
+             <div class="">
 
              </div>
-             <div class="drop">
-             </div>
+             
              <div class="water ">
-                 <img src="water.jpg" class="img" alt="">
+                 <img src="water1.png" class="img" alt="">
              </div>
         </div>
     </main>
     <script>
         window.onload=function()
-        {
-
-        
-        let dropObj=document.querySelector(".drop");
+        {     
         let top=0;
-        function move()
+       
+        function makeDrop(parent)
         {
-            dropObj.style.top=`${top}px`;
-            top++;
-            console.log(top)
+            let left=Math.floor(Math.random()*1000)%550;
+            /*console.log(left)*/
+            let div=document.createElement("div")
+            div.classList.add("drop");
+            div.style.left=`${left}px`;
+            parent.appendChild(div)
+            div.innerHTML=makeExpresion();
+            return {
+                left:left,
+                top:-10,
+                move()
+                {
+                    div.style.top=`${this.top}px`;
+                    this.top++;
+
+                 },
+                 destroy()
+                 {
+                     this.left=null;
+                     this.div=null;
+                 }
+            }
         }
-        setInterval(move,1)
+        let container=document.querySelector(".container");
+        let drops=[];
+        for(let i=0;i<=10;i++)
+        
+        setTimeout(()=>drops.push(makeDrop(container)),1000*(i+1));
+        function move()
+            {
+                for(let drop of drops)
+                drop.move()
+            }
+            setInterval(move,1)
         }
+        function makeExpresion()
+        {
+            let num1=Math.floor(Math.random()*100);
+            let num2=Math.floor(Math.random()*100);
+            let operators=['*','%','-','+'];
+            let index=Math.floor(Math.random()*10)%operators.length;
+            return `<div class="text">
+                    <span>${num1}</span>
+                    <span>${operators[index]}</span>
+                    <span>${num2}</span>
+                    </div>`
+                    
+        }
+
     </script>
 
     </body>
