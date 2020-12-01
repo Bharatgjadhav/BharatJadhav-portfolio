@@ -84,7 +84,9 @@
              <div class="water ">
                  <img src="water.png" class="img" alt="">
              </div>
+            
         </div>
+        <input type="text" autofocus>
     </main>
     <script>
         window.onload=function()
@@ -98,9 +100,11 @@
             let div=document.createElement("div")
             div.classList.add("drop");
             div.style.left=`${left}px`;
-            parent.appendChild(div)
-            div.innerHTML=makeExpresion();
+            parent.appendChild(div);
+            let obj=makeExpresion();
+            div.innerHTML=obj.html;//....
             return {
+                ans:obj.ans,
                 left:left,
                 top:-10,
                 move()
@@ -113,12 +117,14 @@
                  {
                      this.left=null;
                      this.div=null;
+                     div.style.display="none";
                  }
             }
         }
         let container=document.querySelector(".container");
+        let inputBox=document.querySelector("input");
         let drops=[];
-        for(let i=0;i<=10;i++)
+        for(let i=0;i<=2;i++)
         
         setTimeout(()=>drops.push(makeDrop(container)),1000*(i+1));
         function move()
@@ -126,23 +132,57 @@
                 for(let drop of drops)
                 drop.move()
             }
-            setInterval(move,1)
-        }
+            setInterval(move,30)
+        
         function makeExpresion()
         {
-            let num1=Math.floor(Math.random()*100);
-            let num2=Math.floor(Math.random()*100);
-            let operators=['*','%','-','+'];
+
+            let num1=Math.floor(Math.random()*9);
+            let num2=Math.floor(Math.random()*9);
+            let operators=['*','-','+'];
+            document.addEventListener("keydown",updateDrops);//update call
             let index=Math.floor(Math.random()*10)%operators.length;
-            return `<div class="text">
+            return { html:`<div class="text">
                     <span>${num1}</span>
                     <span>${operators[index]}</span>
                     <span>${num2}</span>
-                    </div>`
-                    
+                    </div>`,// return html object
+                    ans:eval(num1+operators[index]+num2)//return ans object
+            }       
         }
+        let started= false;
+        function updateDrops(e)//updatefunction 
+        {
+            if(!started)
+            {
+                started=true;
+                let audio=new Audio("tone.mp3");
 
+                let promise=audio.play()
+                audio.loop=true
+                if(promise !==undefined)
+                {
+                    promise.then(()=>audio.play()).catch(error => console.log(error))
+                }
+            }
+            let guess=inputBox.value;
+            console.log("pressed");
+            console.log(e); 
+            if(e.keyCode==13)
+            {
+                drops.filter(drop=>{
+                    if(drop.ans==guess){
+                        drop.destroy();
+                        return false;
+                    }
+                    return true;
+                })
+                inputBox.value="";
+            }
+        }   
+    }
+      /*let audio=new Audio("tone.mp3");
+        audio.play();*/
     </script>
-
     </body>
 </html>
