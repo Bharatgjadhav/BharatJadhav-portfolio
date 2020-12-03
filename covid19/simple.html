@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+            <div id="new">
+
+            </div>
+
+        </div>
+        <script>
+           /* var url = "https://api.covid19api.com/"; // Change this to your URL
+            fetch(url)
+            .then(function(response) {
+             if(response.ok) { // Check if response went through
+              response.json().then(function(data) { 
+                  var price_USD = document.getElementById('covid');
+                  var USDPrice = '<p>name:' + data.something + '</p>';
+                  Name.innerHTML += USDPrice;
+              });
+          } else { // Response wasn't ok. Check dev tools
+              console.log("response failed?");
+          }
+    });*/
+            let p=document.querySelector('new')
+            var url="https://api.github.com/users";
+            .then(users=>users.json())
+            .then(users=>users
+            .filter(user=>user.login.includes("mob")))
+            .then(users=>console.log(users))
+            
+        </script>
+    </body>
+</html>
