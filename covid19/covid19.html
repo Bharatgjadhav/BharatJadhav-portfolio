@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+        <div class="data">
+
+        </div>
+        
+
+    </body>
+    <script>
+        let summaryApi="https://api.covid19api.com/summary";
+        let dataBox=document.querySelector(".data");
+       async function getData()
+        {
+            try
+            {
+               let f=await fetch(summaryApi);
+               let obj=await f.json();
+               /*console.log(Object.keys(obj));*/
+               return obj;//object return
+            }
+            catch(e)
+            {
+                console.log(e);
+            }
+        }
+        /*let obj=getData();
+        console.log(obj);
+        getData().then(obj=>console.log(obj));*/
+        async function showData()
+        {
+            let dataObj=await getData()
+            let globalData=dataObj.Global;
+            let html="";
+            for (let key in globalData)
+            {
+                html+=`<div class="new data">
+                <h1>${key}</h1>
+                <h1>${globalData[key]}</h1>
+                </div>`
+                dataBox.innerHTML=html;
+            }
+            
+        }
+        showData();
+
+    </script>
+</html>
