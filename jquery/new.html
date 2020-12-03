@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <title>jquery example</title>
+    <head>
+        <style>
+            *{
+                margin: 0%;
+                padding: 0%;
+
+            }
+            .box
+            {
+                width: 500px;
+                height: 500px;
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div  class="box">
+            <div class="data">
+
+            </div>
+
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js">        </script>
+
+        <script>
+            $(document).ready(function(){
+            /*$(".box").click(()=>alert("hello"))*/
+            let dataBox=$(".data");//
+            $(".box").slideDown();     
+            $.get("https://api.covid19api.com/summary",function (dataObj)
+           {
+           
+            let globalData=dataObj.Global 
+            let html="";
+            for(let key in globalData)
+            {
+                html+=`<div class="new data">   
+                <h1>${key}</h1>
+                <h1>${globalData[key]}</h1>
+                </div>`
+                
+                
+            }
+            dataBox.html(html);
+           })
+           })
+           
+            
+
+    
+        </script>
+    </body>
+</html>
