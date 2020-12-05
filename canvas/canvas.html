@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <title>
+
+    </title>
+    <head>
+        <style>
+            *
+            {
+                margin: 0%;
+                padding: 0%;
+
+            }
+        </style>
+
+    </head>
+    <body>
+        <canvas id="canvas">
+
+        </canvas>
+        <script>
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            /*ctx.fillStyle = 'green';*/
+            ctx.strokeStyle = 'green';
+            ctx.strokeRect(10, 10, 150, 1000);
+        </script>
+    </body>
+</html>
