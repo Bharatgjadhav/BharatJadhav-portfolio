@@ -27,36 +27,84 @@
             }
             .react-logo
             {
-                width: 100%;
-                height: auto;
+                width: 22px;
+                height: 20px;
 
             }
             .flex
             {
                 display: flex;
+                flex-direction: row;
+                flex: 1;
             }
+            .right-align
+            {
+                margin-left: auto;
+                margin-right: 0%;
+            }
+            
             .react-text
             {
                 color: #61dafb;
+            }
+            .height-60
+            {
+                height: 60px;
+            }
+            .left
+            {
+                float: left;
+            }
+            .right
+            {
+                float: right;
             }
 
         </style>
     </head>
     <body>
         <div class="container">
-            <header class="header test-black">
-                <div class="logo-conatiner flex">
-                <div>
-                    <div class="react-logo flex">
-                        <a href="assets/reactlogo.svg"></a>
+            <header class="header flex  height-60">
+                <div class="logo-conatiner flex right-align">
+                
+                    <div class="react-logo ">
+                        <img src="assets/reactlogo.svg" alt="">
                     </div>
-                    <div class="react-text">
-                        <h4>reactjs</h4>
+                    <div class="react-text ">
+                        <h4>Reactjs</h4>
                     </div>
-                </div>
+                </div>  <!-- logo ends here  -->
+                <div class="flex">
+                    <div class="">
+                        <h4>Docs</h4>
+                    </div>
+                    <div>
+                        <h4>
+                            Tutorial
+                        </h4>
+                    </div>
+                    <div>
+                        <h4>Blog</h4>
+                    </div>
+                    <div>
+                        <h4>Community</h4>
+                    </div>
+                </div><!-- lists end here -->
+                <div class="flex">
+                    <input type="text" placeholder="Search">
 
-                </div>
-
+                </div><!-- search box end here -->
+                <div class="flex">
+                    <div>
+                        <h4>V17.0.1</h4>
+                    </div>
+                    <div>
+                        <h4>Languages</h4>
+                    </div>
+                    <div>
+                        <h4>GitHub</h4>
+                    </div>
+                </div><!-- left side menu end here -->
             </header>
         </div>
 
