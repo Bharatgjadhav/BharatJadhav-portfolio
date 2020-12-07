@@ -35,7 +35,19 @@
             {
                 display: flex;
                 flex-direction: row;
-                flex: 1;
+               
+            }
+            .flex-grow1
+            {
+                flex-grow: 1;
+            }
+            .flex-grow2
+            {
+                flex-grow: 2;
+            }
+            .flex-grow3
+            {
+                flex-grow: 3;
             }
             .right-align
             {
@@ -86,7 +98,7 @@
     <body>
         <div class="container">
             <header class="header flex  height-60 fix">
-                <div class="logo-conatiner flex right-align">
+                <div class="logo-conatiner flex right-align flex-grow1">
                 
                     <div class="react-logo ">
                         <img src="assets/reactlogo.svg" alt="">
@@ -95,34 +107,34 @@
                         <h4>Reactjs</h4>
                     </div>
                 </div>  <!-- logo ends here  -->
-                <div class="flex">
-                    <div class="">
+                <div class="flex flex-grow3">
+                    <div class=" flex-grow1">
                         <h4>Docs</h4>
                     </div>
-                    <div>
+                    <div class="flex-grow1">
                         <h4>
                             Tutorial
                         </h4>
                     </div>
-                    <div>
+                    <div class="flex-grow1">
                         <h4>Blog</h4>
                     </div>
-                    <div>
+                    <div class="flex-grow1">
                         <h4>Community</h4>
                     </div>
                 </div><!-- lists end here -->
-                <div class="flex">
+                <div class="flex flex-grow1">
                     <input type="text" placeholder="Search">
 
                 </div><!-- search box end here -->
-                <div class="flex">
-                    <div>
+                <div class="flex flex-grow2">
+                    <div class="flex-grow1">
                         <h4>V17.0.1</h4>
                     </div>
-                    <div>
+                    <div class="flex-grow1">
                         <h4>Languages</h4>
                     </div>
-                    <div>
+                    <div class="flex-grow1">
                         <h4>GitHub</h4>
                     </div>
                 </div><!-- left side menu end here -->
