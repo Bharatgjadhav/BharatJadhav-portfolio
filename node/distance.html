@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <title>calculate distance </title>
+        </head>
+        <style>
+            *{
+                margin: 0%;
+                padding: 0%;
+
+            }
+            .container
+            {
+                color: blue;
+                background-color: black;
+            }
+            .div
+            {
+                height: 100%;
+                width: 100%;
+            }
+
+        </style>
+        
+
+        <body>
+            <div class="container">
+                <div>
+                    <input type="text">
+                </div>
+                
+                <div class="result" onclick="">
+                    calculate the distance 
+
+                </div>
+                <div>
+                    the distance is:
+
+                </div>
+
+
+                
+
+            </div>
+
+
+            <script>
+
+                let a=[10,11,7,12,14]
+                let result=a.slice(1).reduce((acc,currentValue)=>{
+                    return {prev:currentValue,
+                                sum:Math.abs(currentValue-acc.prev)+acc.sum
+                            }
+                },
+                        {prev:a[0],sum:0})
+
+                console.log(result.sum)
+            </script>
+
+        </body>
+    
+</html>
