@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -130,9 +131,8 @@
 
     </div>
     <script>
-        window.onload=function()
-        {
-          document.addEventListener("keypress",show)
+        
+          document.addEventListener("keydown",keyPress)
           document.addEventListener("keydown",close)
 
           function openNav()
@@ -145,9 +145,9 @@
 
         {
             document.getElementById("mysidenav").style.width="0";
-            document.getElementById("main").style.marginLeft="0";                                                                   
+            document.getElementById("main").style.marginLeft="0";                                                                    
         }
-          function show(e)
+          function keyPress(e)
          {
             if(e.keyCode==13)
             {
@@ -155,14 +155,15 @@
             }
             
          }
-       function close(e)
-       {
-           if(e.keyCode==17)
-           {
-               closeNav();
-           }
-       } 
-    }
+         function close(e)
+         {
+             if(e.keyCode==13)
+             {
+                 closeNav();
+             }
+         }
+        
+       
     </script>
     
     
