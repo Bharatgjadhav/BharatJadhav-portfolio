@@ -10,21 +10,21 @@
             margin: 0%;
             padding: 0%;
         }
-        .bg-color
+        .bg-black
         {
-            background-color: blueviolet;
+            background-color: black;
         }
         .side-nav
         {
             height: 100%;
-            width: 0%;
+            width: 0;
             top: 0;
             left: 0;
-            background-color: blue;
+            background-color: white;
             z-index: 1;
             position: fixed;
             transition: 0.5s;
-            overflow-x: hidden;/* to hide slide bar */
+            overflow-x: hidden;
             padding-top: 60px;
         }
         #main
@@ -32,16 +32,25 @@
             transition: margin-left .5s;
             padding: 20px;
         }
+        p
+        {
+            font-family: cursive;
+            margin-bottom: 25px;
+            margin-top: 15px;
+            color: whitesmoke;
+        }
+
         .side-nav .closebtn
         {
             position: absolute;
             top: 0;
-            right: 250px;
+            right: 15px;
             font-size: 36px;
             margin-left: 50px;
-            color: white;
-            background-color: white;
-        }
+            color: 818181;
+            
+        } 
+    
         .side-nav a
         {
             padding: 8px 8px 8px 32px;
@@ -50,36 +59,74 @@
             color: #818181;
             display: block;
             transition:0.3s; 
+            position: relative;
         }
+        .side-nav a:hover
+        {
+            color: white;
+        }
+        .font-black
+        {
+            color: black;
+        }
+        .text-white
+        {
+            color: whitesmoke;
+        }
+    
     </style>
 </head>
 <body>
-    <div class="container bg-color">
+    <div class="container bg-black">
         <div id="mysidenav" class="side-nav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
+            <a href="javascript:void(0)" class="closebtn text-color" onclick="closeNav()">X</a>
             <a href="">About </a>
             <a href="">Services</a>
             <a href="">jobs</a>
             <a href="">Products</a>
             <a href="">version</a>
         </div>
-        <span onclick="openNav()">open</span>
+        <span onclick="openNav()" class="text-white">open</span>
         <div id="main">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti at sunt labore nisi 
-            sequi soluta magni natus rem enim maiores iste modi eos voluptate tenetur commodi ipsum
-             suscipit, ducimus facilis.
-             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-             
-             Soluta doloribus recusandae maiores 
-             magnam similique consequuntur officia, dolorum est magni 
-             iusto sit repellendus impedit quo mollitia? Ad officia molestias nostrum reiciendis.
+            <p >
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, 
+                aliquid optio! Modi assumenda dolore libero et ut, qui repellendus sint dignissimos,
+                 similique nesciunt maiores? Consequatur soluta tempora nam hic labore.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Laboriosam optio iure recusandae alias dignissimos quod?
+                 Harum atque quos mollitia explicabo recusandae modi voluptates ut sapiente earum. Esse modi iusto fugiat?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, incidunt repudiandae itaque
+                 cumque veritatis omnis sunt natus. Nisi quae cum vitae. Deleniti sint dolor ea mollitia iure quis aut ipsum.
+            </p>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis laudantium, autem architecto ut 
+                voluptas repellendus saepe nemo nobis odit officia cumque quos sapiente, nisi quam error ab eos, vitae tenetur!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, rerum dolorem voluptatibus numquam aut, veritatis 
+                aperiam cupiditate distinctio sint earum libero eum, odit culpa necessitatibus reiciendis provident velit ad quidem!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis facere nesciunt
+                 sint accusamus. Reprehenderit voluptatum nam fugiat, autem voluptatem, voluptas 
+                 sed quidem perspiciatis voluptatibus saepe obcaecati dolor cumque exercitationem nemo.
 
-
-             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium enim minus labore a 
-             aliquam qui debitis deleniti asperiores, 
-             maiores vero exercitationem sed dignissimos, eligendi neque minima, architecto ducimus doloribus. 
-             Et!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum error reprehenderit
+                 architecto earum amet dignissimos exercitationem aliquam consequatur eveniet.
+                 Repudiandae deleniti error doloribus impedit reiciendis quibusdam voluptatum,
+                  soluta excepturi in?
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, nesciunt praesentium.
+                 Aliquid tempore quibusdam expedita 
+                adipisci aspernatur ut voluptas! Hic alias, incidunt a corrupti odit ex eaque obcaecati soluta iure.
+            </p>
         </div>
 
     </div>
@@ -89,16 +136,12 @@
             
             document.getElementById("mysidenav").style.width="250px";
             document.getElementById("main").style.marginLeft="250px";
-            /* 
-            document.getElementById("").style.width="250px";
-            document.getElementById("").style.marginLeft="250px";
-            document.body.style.backgroundColor="rgba(0,0,0,0.4)"; */
         }
         function closeNav()
         {
-            document.getElementById(mysidenav).style.width="0";
-            document.getElementById(mysidenav).style.marginLeft="0";
-
+            document.getElementById("mysidenav").style.width="0";
+            document.getElementById("main").style.marginLeft="0";
+           // document.getElementById(mysidenav).style.marginLeft="0";                                                                      
         }
     </script>
     
