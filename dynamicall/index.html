@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+
+        }
+        /* .container
+        {
+            background-color: black;
+    
+        } */
+        tabel, th,td 
+        {
+            border:  solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table id="myTabel">
+            <thead>
+                <th>Name</th>
+                <th> Quantity</th>
+                <th>Price</th>
+
+            </thead>
+            <tr>
+                <td>s</td>
+                <td>h</td>
+                <td>900</td>
+            </tr>
+            <tr>
+                <td>ff</td>
+                <td>kk</td>
+                <td>900</td>
+            </tr>
+        </table>
+        <script>
+            function rowInsert()
+            {/* 
+            let tabel=document.getElementById("myTabel")
+            let row=tabel.insertRow(0)
+            let cell1=row.inser */
+            let t =document.getElementById("myTabel");
+            let r=document.createElement("tr");
+            t.tbody[0].appendChild(r);
+            }
+
+        </script>
+        
+    </div>    
+</body>
+</html>
