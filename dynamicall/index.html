@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +15,7 @@
             background-color: black;
     
         } */
-        tabel, th,td 
+        tabel, th , td 
         {
             border:  solid black;
             
@@ -27,33 +26,54 @@
     <div class="container">
         <table id="myTabel">
             <thead>
-                <th>Name</th>
-                <th> Quantity</th>
-                <th>Price</th>
-
+                <tr>
+                    <th>Name </th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
             </thead>
-            <tr>
-                <td>s</td>
-                <td>h</td>
-                <td>900</td>
-            </tr>
-            <tr>
-                <td>ff</td>
-                <td>kk</td>
-                <td>900</td>
-            </tr>
-        </table>
-        <script>
-            function rowInsert()
-            {/* 
-            let tabel=document.getElementById("myTabel")
-            let row=tabel.insertRow(0)
-            let cell1=row.inser */
-            let t =document.getElementById("myTabel");
-            let r=document.createElement("tr");
-            t.tbody[0].appendChild(r);
-            }
+            <tbody    >
+                <tr >
+                    <td>
+                        <input type="text">
+                        
+                    </td>
+                    <td>
+                        <input type="text">
+                        
+                    </td>
+                    <td  onblur="rowInsert()">
+                        <input type="text" id="insert" >
+                        
+                    </td >
+                </tr>
 
+                </td>
+            </tbody>
+        </table>
+
+        <script>
+            window.onload=function()
+            {
+            document.getElementById("insert").addEventListener("keypress",rowInsert);
+            function rowInsert()
+            {
+            let x=document.getElementById("myTabel").insertRow();
+            let c1=x.insertCell(0);
+            let c2=x.insertCell(1);
+            let c3=x.insertCell(2);
+            c1.innerHTML=`<td><input type="text"></td>`
+            c2.innerHTML=`<td><input type="text"></td>`
+            c3.innerHTML=`<td><input type="text" onblur="rowInsert()"></td>`
+            }/* 
+            function tab(e)
+            {
+                if(e.keycode==9)
+                {
+                    rowInsert();
+                }
+            } */
+        }
         </script>
         
     </div>    
