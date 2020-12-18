@@ -17,7 +17,7 @@
         }
         .bg-black
         {
-            background-color:black;
+            background-color:black; 
         }
         .white
         {
@@ -29,6 +29,12 @@
             margin-top: 15px;
             margin-bottom: 50px;
         }
+        .box{
+            width: 65px;
+            height: 65px;
+            border: 3px solid blue;
+            float: left;
+        }
 
         
        
@@ -37,21 +43,26 @@
 <body>
     <div class="conatiner">
         <div class=" flex ">
-            <div class=" flex">
-                <div class=" " style="flex-direction: column;">
-                    <!-- <img src="assets/apple2.jpeg" alt="">
-                    <img src="assets/apple1.jpeg" alt="">
-                    <img src="assets/apple2.jpeg" alt="">
-                </div> -->
+            <div>
+                <div class="" style="flex-direction:column">
+                    <div style="position: sticky; top: 0%; z-index: 1;">
+                        <img src="assets/apple2.jpeg" alt="">
+                    </div>
+                    <div style="position: sticky; top: 0; z-index: 1;">
+                        <img src="assets/apple1.jpeg" alt="">
+                    </div>
+                    <div style="position: sticky; top: 0%; z-index: 1;">
+                        <img src="assets/apple2.jpeg" alt="">
+                    </div>
+                    
+                </div>
                 
            </div>
-           <div class="flex">
-               <div>
+           <div class="">
+               <div style="width: 350px; position: sticky; top: 0%; ">
                 <img src="assets/apple1.jpeg" alt="">
 
-               </div>
-
-            
+               </div>       
            </div>
             <div class=" flex">
                 <div>
