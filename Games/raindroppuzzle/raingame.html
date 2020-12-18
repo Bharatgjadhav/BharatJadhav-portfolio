@@ -40,7 +40,7 @@
             .water
             {
                 position: absolute;
-                bottom: -30px;
+            
                 width: 100%;
                 z-index:3;
             }
@@ -90,6 +90,26 @@
         window.onload=function()
         {     
         let top=0;
+        let water_level = 500;
+        const water_div = document.querySelector(".water")
+        water_div.style.top = `${water_level}px`
+        let max_tries = 3;
+
+        function increaseWater(drop){
+            console.log(drop.top)
+            if(drop.top+90 >= water_level){
+                max_tries--;
+
+                water_level -= 10
+                drop.destroy()
+                if(!max_tries)
+                {
+                    alert("you lose!!")
+                }
+            }
+            water_div.style.top = `${water_level}px`
+
+        }
        
         function makeDrop(parent)
         {
@@ -122,13 +142,18 @@
         let container=document.querySelector(".container");
         let inputBox=document.querySelector("input");
         let drops=[];
-        for(let i=0;i<=2;i++)
+        for(let i=0;i<3;i++)
         
         setTimeout(()=>drops.push(makeDrop(container)),1000*(i+1));
         function move()
             {
-                for(let drop of drops)
-                drop.move()
+                for(let drop of drops){
+                    drop.move()
+                    increaseWater(drop)
+                    
+                }
+                drops = drops.filter(drop => drop.left!=null)
+
             }
             setInterval(move,30)
         
