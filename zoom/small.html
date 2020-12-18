@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0%;
+                padding: 0%;
+
+            }
+            .sample-image
+            {
+                transition: all  5s ease;
+                width: 100% ;
+            }
+             .sample
+            {
+                width: 800% ;
+            } 
+            .width-50
+            {
+                width: 10%;
+            }
+            
+        </style>
+    </head>
+    <body>
+        
+        <div class="container ">
+            <div class="width-50">
+                <img src="hd.jpg" alt="" class="sample-image">
+            </div>
+
+        </div>
+        <script>
+            document.querySelector("img.sample-image").addEventListener("click",function()
+            {
+                this.classList.toggle("sample")
+            })
+        </script>
+    </body>
+</html>
