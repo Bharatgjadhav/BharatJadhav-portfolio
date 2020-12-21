@@ -35,7 +35,19 @@
             border: 3px solid blue;
             float: left;
         }
-
+        div.img
+        {
+            border: 5px solid green;
+        }
+        .zoom
+        {
+            width: 100%;
+        }
+        img.myImg 
+        {
+            transition: all 5s ease;
+            width: 100%;
+        }
         
        
     </style>
@@ -44,15 +56,15 @@
     <div class="conatiner">
         <div class=" flex ">
             <div>
-                <div class="" style="flex-direction:column; position: sticky; top: 0%;">
+                <div class="thumb" style="flex-direction:column; margin: 10px; border: 5px solid black; width: 95x;background-color: black; position: sticky; top: 0%;">
                     <div>
-                        <img src="assets/apple2.jpeg" alt="">
+                        <img src="assets/apple2.jpeg" class="myImg" alt="">
                     </div>
                     <div>
-                        <img src="assets/apple1.jpeg" alt="">
+                        <img src="assets/apple1.jpeg" class="myImg" alt="">
                     </div>
                     <div>
-                        <img src="assets/apple2.jpeg" alt="">
+                        <img src="assets/apple2.jpeg" class="myImg" alt="">
                     </div>
                     
                 </div>
@@ -60,7 +72,7 @@
            </div>
            <div class="">
                <div style="width: 350px; position: sticky; top: 0%; ">
-                <img src="assets/apple1.jpeg" alt="">
+                <img src="assets/apple1.jpeg" style="width: 250px; height: 450px;margin: 10px;" class="myResult" alt="">
 
                </div>       
            </div>
@@ -177,5 +189,24 @@
         </div>
 
     </div>
+    <script>
+    const result=document.querySelectorAll(".myImg");
+    const my=document.querySelector(".myResult")
+    for(i=0; i<result.length; i++)
+    {
+        result[i].addEventListener("click",display)
+    }
+    function display(e)
+    {
+        my.src=e.target.src
+    }
+    
+        document.querySelector("img.myImg").addEventListener("click",function()
+        {
+            this.classList.toggle("zoom");
+        });
+        
+    
+    </script>
 </body>
 </html>
