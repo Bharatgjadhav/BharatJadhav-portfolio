@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <style>
+            *{
+                margin: 0%;
+                padding: 0%;
+
+            }
+            .container
+            {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+            ul.main
+            {
+                margin: 0 auto;
+                padding: 0;
+                float: left;
+            }
+            ul.main li
+            {
+                list-style: none;
+                margin: 5px;
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+                overflow: hidden;
+            }
+            ul.main li img
+            {
+                width: 100%;
+            }
+            .box
+            {
+                float: left;
+                width: 500px;
+                height: 500px;
+                margin: 5px;
+                border: 1px solid green;
+                overflow: hidden;
+            }
+            .box img
+            {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="conatainer">
+                <ul class="main">
+                    <li>
+                       <img src="assets/apple1.jpeg" class="tn" alt="">
+                    </li> 
+                    <li>
+                        <img src="assets/apple2.jpeg" alt="" class="tn">
+                </ul>
+            <div class="box">
+                <img src="assets/apple1.jpeg" class="result" alt="">
+            </div>
+            
+            <script>
+                const thumbnails = document.querySelectorAll(".tn")
+                const resultImage = document.querySelector(".result")
+                for(let i=0; i<thumbnails.length; i++){
+                    thumbnails[i].addEventListener("click",display)
+                }
+                 function display(e)
+                {
+                    resultImage.src = e.target.src
+
+                }
+            </script>
+
+        </div>
+    </body>
+</html>
