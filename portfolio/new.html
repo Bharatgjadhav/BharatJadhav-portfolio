@@ -18,29 +18,30 @@
         </style>
     </head>
     <body>
-        <div class="container">
+        
             <div class=" box hi">
-
+                    1
             </div>
             <div class="box bye">
-
+                2
             </div>
 
-        </div>
         <script>
-            let res1=document.querySelector(".hi").addEventListener("click");
-            let res2=document.querySelector(".bye")
-           /*  res1=addEventListener("click", display)
-            res2=document.querySelector(".bye")
+            let res1=document.querySelector(".hi");
+            let res2=document.querySelector(".bye");
+            res1.addEventListener("click", display)
+            res2.addEventListener("click",dis)
                 function display()
             {
                 
-                res1.style.display="none";
+                    res1.style.display="none";
+                    console.log("1");
             }
             function dis()
             {
                 res2.style.display= "none";
-            } */
+                console.log("2");
+            }  
         </script>
     </body>
 </html>
