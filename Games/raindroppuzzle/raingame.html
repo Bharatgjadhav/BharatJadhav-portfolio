@@ -99,7 +99,6 @@
             console.log(drop.top)
             if(drop.top+90 >= water_level){
                 max_tries--;
-
                 water_level -= 10
                 drop.destroy()
                 if(!max_tries)
@@ -108,9 +107,7 @@
                 }
             }
             water_div.style.top = `${water_level}px`
-
         }
-       
         function makeDrop(parent)
         {
             let left=Math.floor(Math.random()*1000)%550;
