@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            *{
+                margin: 0%;
+                padding: 0%;
+
+            }
+            .box
+            {
+                height: 500px;
+                width: 500px;
+                border: 3px solid black;
+            }
+            .box1
+            {
+                height: 350px;
+                width: 350px;
+                border: 3px solid black;
+            }
+            .center1
+            {
+                 display: block;
+                 margin-left: auto;
+                 margin-right: auto;
+
+            }
+            .center
+            {
+                margin-top: 10px;
+                background-color: blue;
+                font-size: 150px;
+                text-align: center;
+                margin-left: 14%;
+            }
+        </style>
+
+    </head>
+    <body>
+        
+        <div class="box center1">
+            <div class="box1 center  number center" >
+                    1
+            </div>
+            <!-- <input type="text" style="margin-left: auto;">
+            <input type="text" style="margin-right: auto;"> -->
+            <!-- <div style="height: 2px; width: 10px; margin-left: auto;">
+                Increment
+            </div>
+ -->            <!-- <div >
+                Decrement
+            </div> -->
+            <button class="inc" id="hi" style="margin-left: 15px; margin-top: 25px;">Increment</button>  
+            <button class="dec" style="margin-left: 300px; ">Decrement</button>
+
+        </div>
+        <script>
+            let score=0;
+            let num=document.querySelector(".number");
+            let i=document.querySelector(".inc")
+            let d=document.querySelector(".dec")
+            i.addEventListener("click",increment)
+            d.addEventListener("click",increment)
+            function increment()
+            {
+                if (document.getElementById("hi").clicked = true)
+                {
+                     score++;
+                    num.innerHTML=score;
+                }
+                else
+                {
+                     score--;
+                     num.innerHTML=score;
+                }
+            }
+            /* function Decrement()
+            {
+                score--;
+                num.innerHTML=score;
+                
+            }  */
+
+            /* function clicked(btn_type) */
+        </script>
+
+    </body>
+</html>
