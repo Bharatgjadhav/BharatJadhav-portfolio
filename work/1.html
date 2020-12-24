@@ -44,20 +44,12 @@
             <div class="box1 center  number center" >
                     1
             </div>
-            <!-- <input type="text" style="margin-left: auto;">
-            <input type="text" style="margin-right: auto;"> -->
-            <!-- <div style="height: 2px; width: 10px; margin-left: auto;">
-                Increment
-            </div>
- -->            <!-- <div >
-                Decrement
-            </div> -->
-            <button class="inc" id="hi" style="margin-left: 15px; margin-top: 25px;">Increment</button>  
-            <button class="dec" style="margin-left: 300px; ">Decrement</button>
+            <button class="inc hi" value="inc" style="margin-left: 15px; margin-top: 25px;">Increment</button>  
+            <button class="dec hi" value="dec" style="margin-left: 300px; ">Decrement</button>
 
         </div>
         <script>
-            let score=0;
+           /*  let score=0;
             let num=document.querySelector(".number");
             let i=document.querySelector(".inc")
             let d=document.querySelector(".dec")
@@ -65,7 +57,7 @@
             d.addEventListener("click",increment)
             function increment()
             {
-                if (document.getElementById("hi").clicked = true)
+                if (document.getElementById("hi").clicked == true)
                 {
                      score++;
                     num.innerHTML=score;
@@ -76,6 +68,11 @@
                      num.innerHTML=score;
                 }
             }
+
+            function click()
+            {
+
+            } */
             /* function Decrement()
             {
                 score--;
@@ -84,6 +81,18 @@
             }  */
 
             /* function clicked(btn_type) */
+            let score=1;
+            let button=document.querySelectorAll(".hi");
+            for(i=0;i<button.length;i++)
+            {
+                button[i].addEventListener("click", updateNumber);
+            }
+            function updateNumber()
+            {
+                let n=document.querySelector(".number");
+                this.value==="inc" ? score++: score--;
+                n.innerHTML=score;   
+            }
         </script>
 
     </body>
