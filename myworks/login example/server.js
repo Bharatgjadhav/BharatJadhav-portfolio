@@ -20,7 +20,8 @@ const db=new sqlite3.Database("./user.db",(err)=>{
     else
     {
         console.log("database connected")
-        db.run(`CREATE TABLE IF NOT EXISTS USERS(NAME VARCHAR(30),
+        db.run(`CREATE TABLE IF NOT EXISTS USERS(TYPE VARCHAR(20),
+                                                 NAME VARCHAR(30),
                                                 EMAIL VARCHAR(50),
                                                 PASSWORD VARCHAR(50))`,
                         (err)=>{
@@ -30,7 +31,7 @@ const db=new sqlite3.Database("./user.db",(err)=>{
                                 console.log("table users created successfully " )
                             }
                         } )
-        db.run(`CREATE TABLE IF NOT EXISTS ADMIN(NAME VARCHAR(30),
+        /* db.run(`CREATE TABLE IF NOT EXISTS ADMIN(NAME VARCHAR(30),
                                                 EMAIL VARCHAR(30),
                                                 PASSWORD VARCHAR(50))`,
                            (err)=>{
@@ -41,7 +42,7 @@ const db=new sqlite3.Database("./user.db",(err)=>{
                                else{
                                    console.log("admin table created")
                                }
-                           } )
+                           } ) */
     }
 })
 
@@ -51,9 +52,13 @@ app.set("view engine","ejs");
 let port=5000
 
 app.get("/",(req,res)=>{
-    res.render("login")
+    if(req.session.email){
+        res.render("usercontent")
+    }
+    res.redirect("/login")
     })
 app.get("/login",(req,res)=>{
+    let a = "inside"
     res.render("login")
 })
 
@@ -81,6 +86,7 @@ app.get("/usercontent",(req,res)=>{
  app.post("/login",function(req,res){
      let email=req.body.email;
      let password=req.body.password;
+     //let type=req.body.type;
 
      if(req.body.email && req.body.password)
      {
@@ -93,10 +99,16 @@ app.get("/usercontent",(req,res)=>{
                  console.log("error",err)
              }else if(rows.length==0){
                  console.log("login failed ")       
+             }else if(rows[0].TYPE=="admin")
+             {
+                 /* console.log(rows[0].TYPE) */
+                 console.log("admin logged in")
+                 res.render("admincontent")
              }
              else { 
                  console.log(rows);
                  req.session.email = email;
+                 console.log("user logged in")
                  res.render("usercontent");
              }
              /* else
@@ -135,7 +147,7 @@ app.post("/register",(req,res)=>{
     let name =req.body.name
     let email=req.body.email
     let Password=req.body.Password
-    db.run("INSERT INTO USERS(NAME ,EMAIL,PASSWORD) VALUES(?,?,?)",
+    db.run("INSERT INTO USERS(NAME,EMAIL,PASSWORD) VALUES(?,?,?)",
     [name,email,Password],(err)=>{
         if(err){
             console.log(err)
